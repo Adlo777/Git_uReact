@@ -47,19 +47,39 @@
 
     class BonjourClass extends React.Component
     {
+        constructor (props)
+        {
+            super(props)
+            this.state=
+            {
+                name:"Admeo"
+            }
+            this.handleChange= this.handleChange.bind(this)
+        }
+
+        handleChange(e)
+        {
+            this.setState(
+                {
+                    name:e.target.value
+                }
+            )
+        }
+
         render()
         {
             return(
                 <div>
-                    <h1 id="firstly">{this.props.message}</h1>
-                    <div id="secondary">{this.props.secondly}{this.props.version}</div>
+                    <h1 id="firstly">{this.state.name} {this.props.message}</h1>
+                    <div id="secondary">{this.props.secondly}{this.props.version} </div>
+                    <p> Bienvenue M. <input type="text" value={this.state.name} onChange={this.handleChange} />  </p>
                     </div>
             )
         }
     }
     
     ReactDOM.render(
-    <Bonjour message="Welcome in React Forum" secondly="We are happy to see today  " version={16}/>,
+    <BonjourClass message="Welcome in React Forum" secondly="We are happy to see today  " version={16} />,
     document.getElementById('react-root')
     )
     

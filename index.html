@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> React work </title>
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script crossorigin src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+<style>
+    h1
+    {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    #header
+    {
+        background-color: aqua;
+    }
+    .heading
+    {
+        color: #FFF;
+    }
+    #secondary
+    {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        background-color: aqua;
+    }
+    #firstly
+    {
+        color: #FFF;
+        background-color: bisque;
+    }
+
+
+</style>
+<div id='react-root'><div id="mercy"></div> </div>
+<script type="text/babel">
+  
+  const Bonjour = ({message,secondly,version}) => (
+      <div>
+        <h1>{message}</h1>
+        <div>{secondly} {version}</div>
+        </div>
+  )
+
+    class BonjourClass extends React.Component
+    {
+        render()
+        {
+            return(
+                <div>
+                    <h1 id="firstly">{this.props.message}</h1>
+                    <div id="secondary">{this.props.secondly}{this.props.version}</div>
+                    </div>
+            )
+        }
+    }
+    
+    ReactDOM.render(
+    <Bonjour message="Welcome in React Forum" secondly="We are happy to see today  " version={16}/>,
+    document.getElementById('react-root')
+    )
+    
+</script>
+
+</body>
+
+</html>
